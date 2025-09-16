@@ -1,15 +1,15 @@
 import cv2 as cv
 import mediapipe as mp
-from .utils import load_image, resize_image
+from utils import load_image
 
-def detect_face_landmark():
+def draw_facial_landmarks(image_path):
     """
     Detects face landmarks in images
     """
     mp_face_mesh = mp.solutions.face_mesh
     face_mesh = mp_face_mesh.FaceMesh(static_image_mode=True, max_num_faces=1)
 
-    image = load_image("danial-craig.jpg")
+    image = load_image(image_path)
 
     height, width = image.shape[:2]
     rgb_image = cv.cvtColor(image, cv.COLOR_BGR2RGB)

@@ -1,6 +1,3 @@
-from vision.core import init_vision
-from reasoning.core import init_reasoning
+from vision import drawer
 
-print("argus: a many-eyed giant in Greek mythology")
-init_vision()
-init_reasoning()
+drawer.draw_facial_landmarks("danial-craig.jpg")
